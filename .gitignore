@@ -2,3 +2,6 @@ build-
 build-*
 *.pro.user
 *~
+
+ffmpeg/
+range/build/

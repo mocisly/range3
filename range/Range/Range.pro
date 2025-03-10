@@ -460,10 +460,13 @@ CONFIG(debug, debug|release) {
     CONFIG += console
 }
 
-win* {
-    LIBS += \
-            -L../../ffmpeg/ffmpeg-4.3.2-win64/bin/ \
-            -L../../ffmpeg/ffmpeg-4.3.2-win64/lib/
+win32 {
+    greaterThan(QT_VERSION, 5.14) {
+        LIBS += -L"$$PWD/../../ffmpeg/ffmpeg-4.3.2-win64/lib/"
+    } else {
+        LIBS += -L../../ffmpeg/ffmpeg-4.3.2-win64/bin/ \
+                -L../../ffmpeg/ffmpeg-4.3.2-win64/lib/
+    }
 }
 
 LIBS += \

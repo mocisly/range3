@@ -4660,7 +4660,11 @@ QList<uint> RModel::sortLineElements(const QList<RElement> &edges, uint firstID)
     }
     if (elementIDs.last() == elementIDs.first())
     {
+#if(QT_VERSION < QT_VERSION_CHECK(5, 15, 2))
         elementIDs.erase(elementIDs.constEnd()-1);
+#else
+        elementIDs.erase(elementIDs.end()-1);
+#endif
     }
 
     return elementIDs;

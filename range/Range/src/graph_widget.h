@@ -14,6 +14,9 @@
 #include <QWidget>
 
 #include "graph_object.h"
+#if(QT_VERSION >= QT_VERSION_CHECK(5, 15, 2))
+#include <QEnterEvent>
+#endif
 
 class GraphWidget : public QWidget
 {
